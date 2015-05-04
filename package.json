@@ -1,0 +1,14 @@
+{
+  "name": "Test",
+  "version": "0.0.1",
+  "private": true,
+  "description": "Two exercises for a job interview, 2015-05-04",
+  "devDependencies": {
+    "express"     : "4.12.3",
+    "swig"        : "1.4.2" ,
+    "body-parser" : "1.12.3",
+    "cheerio"     : "0.19.0",
+    "bower"       : "1.4.1"
+  },
+  "scripts": {}
+}

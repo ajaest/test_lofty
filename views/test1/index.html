@@ -1,0 +1,29 @@
+{% extends "../base.html" %}
+
+
+{% block extra_headers %}
+
+    {% if proxied_doc_headers %}
+        {{proxied_doc_headers|safe}}
+    {% endif %}
+
+{% endblock extra_headers %}
+
+{% block content %}
+    <form id="url_form" style="z-index: 9999; position: fixed; top: 0; left: 0; width: 100%; background-color: red;" method="post">
+        <label for="url_to_proxy">Introduce URL to proxy: </label>
+        <input id="url_to_proxy" type="url" value="{{url_to_proxy|default('http://www.lofty.com/about-lofty')}}" name="url_to_proxy"/>
+        <input type="submit" value="Submit"/>
+    </form>
+{% if error %}
+Error found:
+<pre>{{error}}</pre>
+{% endif %}
+
+{% if proxied_doc_body %}
+<hr/>
+
+    {{proxied_doc_body|safe}}
+
+{% endif %}
+{% endblock content %}
