@@ -1,0 +1,34 @@
+{% extends "../base.html" %}
+
+
+{% block extra_headers %}
+
+    <script src="/bower_components/angular/angular.min.js"                   type="application/javascript"></script>
+    <script src="/bower_components/angular-route/angular-route.min.js"       type="application/javascript"></script>
+    <script src="/bower_components/angular-resource/angular-resource.min.js" type="application/javascript"></script>
+    <script src="/static/test2_app.js"                                       type="application/javascript"></script>
+
+{% endblock extra_headers %}
+
+{% block content %}
+
+<div data-ng-app="test2" >
+    <h1>Menu</h1>
+
+    <p>You can log in using the following users: </p>
+    <ul>
+        <li>username <tt>user1</tt>, password <tt>user1</tt></li>
+        <li>username <tt>user2</tt>, password <tt>user2</tt></li>
+    </ul>
+
+    <ul>
+            <li data-ng-hide="auth.token" ><a href="#/"             >Login                                        </a></li>
+            <li data-ng-show="auth.token" ><a href="#/logout/"      >Logout {% raw %}{{auth.username}}{% endraw %}</a></li>
+            <li data-ng-show="auth.token" ><a href="#/"             >Create submission                            </a></li>
+            <li data-ng-show="auth.token" ><a href="#/submissions/" >View submissions                             </a></li>
+    </ul>
+
+    <div data-ng-view></div>
+</div>
+
+{% endblock content %}

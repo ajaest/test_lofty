@@ -1,0 +1,21 @@
+<div data-ng-show="auth.token" >
+    <h2>Create submission</h2>
+
+    <form  data-ng-submit="createSubmission()" >
+        <textarea name="message"  data-ng-model="submission_message"></textarea>
+        <input type="submit" value="Submit" />
+    </form>
+    <div>{{message}}</div>
+</div>
+
+
+<div data-ng-hide="auth.token" >
+    <h2>Log in</h2>
+
+    <form data-ng-submit="auth.login(username, password).then(onLoginSuccess)">
+        <input type="text"     data-ng-model="username" placeholder="username"/>
+        <input type="password" data-ng-model="password" placeholder="password"/>
+        <input type="submit" value="Submit" />
+    </form>
+
+</div>

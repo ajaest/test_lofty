@@ -8,7 +8,8 @@
     "swig"        : "1.4.2" ,
     "body-parser" : "1.12.3",
     "cheerio"     : "0.19.0",
-    "bower"       : "1.4.1"
+    "bower"       : "1.4.1" ,
+    "sqlite3"     : "3.0.6" ,
   },
   "scripts": {}
 }
